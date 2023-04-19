@@ -5,6 +5,9 @@ import LandingSection from "./components/LandingSection";
 import SubjectSection from "./components/SubjectSection";
 import RewardSection from "./components/RewardSection";
 import ChallengeSection from './components/ChallengeSection';
+import NewsSection from './components/NewsSection';
+import ContactSection from './components/ContactSction';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,7 +21,12 @@ function App() {
           <SubjectSection />
           <RewardSection />
           <ChallengeSection />
+          <NewsSection />
+          <ContactSection />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </ChakraProvider>
     </>
   );
