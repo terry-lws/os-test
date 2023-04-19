@@ -18,7 +18,7 @@ const LandingSection = () => {
       textAlign="center"
     >
       <VStack
-        pl="9.375rem"
+        m="0 150px"
         maxWidth="1280px"
         alignItems="flex-start"
         justifyContent="top"
@@ -28,27 +28,37 @@ const LandingSection = () => {
         textAlign="left"
       >
         <Text fontSize="18px">{firstLine}</Text>
-        <Text fontSize="52px" fontStyle="normal" fontWeight="400" width="40.813rem" height="7.438rem" pt="13px" lineHeight="68px">
+        <Text
+          fontSize="52px"
+          fontStyle="normal"
+          fontWeight="400"
+          width="40.813rem"
+          height="7.438rem"
+          pt="13px"
+          lineHeight="68px"
+        >
           {secondLine}
         </Text>
         <Text fontSize="20px" width="543px" pt="38px">
           {thirdLine}
         </Text>
-        <button
-          style={{
-            backgroundColor: "#04726D",
-            color: "#ffffff",
-            fontFamily: "Arial",
-            borderRadius: "65px",
-            width: "199px",
-            height: "64px",
-            fontSize: "18px",
-            marginTop: "1.438rem",
-            fontWeight: "400"
-          }}
-        >
-          Find out more
-        </button>
+        <a href="#">
+          <button
+            style={{
+              backgroundColor: "#04726D",
+              color: "#ffffff",
+              fontFamily: "Arial",
+              borderRadius: "65px",
+              width: "199px",
+              height: "64px",
+              fontSize: "18px",
+              marginTop: "1.438rem",
+              fontWeight: "400",
+            }}
+          >
+            Find out more
+          </button>
+        </a>
       </VStack>
     </Box>
   );

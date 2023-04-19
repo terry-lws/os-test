@@ -64,6 +64,7 @@ const ChallengeSection = () => {
     >
       <VStack
         pt={130}
+        m="130px 150px"
         maxWidth="1280px"
         justifyContent="top"
         position="relative"
