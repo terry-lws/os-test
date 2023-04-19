@@ -33,7 +33,7 @@ const SubjectSection = () => {
       justifyContent="center"
     >
       <VStack
-        maxWidth="1440px"
+        maxWidth="1280px"
         justifyContent="top"
         position="relative"
         color="#ffffff"
