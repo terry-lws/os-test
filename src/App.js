@@ -6,7 +6,7 @@ import SubjectSection from "./components/SubjectSection";
 import RewardSection from "./components/RewardSection";
 import ChallengeSection from './components/ChallengeSection';
 import NewsSection from './components/NewsSection';
-import ContactSection from './components/ContactSction';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 function App() {
