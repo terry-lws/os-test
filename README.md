@@ -13,7 +13,7 @@ This will install all the necessary dependencies for the project.
 
 ## Usage
 
-To build the app for production, run the following command in your terminal or command prompt: `npm run`
+To run the app, run the following command in your terminal or command prompt: `npm run`
 
 This will start the development server and open the app in your default web browser at http://localhost:3000.
 
