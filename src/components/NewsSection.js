@@ -1,4 +1,11 @@
-import { VStack, Text, Box, HStack } from "@chakra-ui/react";
+import {
+  VStack,
+  Text,
+  Box,
+  HStack,
+} from "@chakra-ui/react";
+import "swiper/swiper.min.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import NewsCard from "./NewsCard";
 
 const heading = "Discover the latest from ACER";
@@ -41,10 +48,10 @@ const NewsSection = () => {
       justifyContent="center"
     >
       <VStack
-        m="120px 150px"
+        my={120}
+        mx={150}
         maxWidth="1280px"
         justifyContent="top"
-        position="relative"
         color="#000000"
         fontFamily="'Poppins', sans-serif"
         alignItems="center"
@@ -52,7 +59,10 @@ const NewsSection = () => {
         <Text fontSize="25px" color="#333333">
           {heading}
         </Text>
-        <HStack spacing="1.875rem" pt="30px">
+        <HStack
+          spacing={{ base: "0", lg: "1.875rem" }}
+          flexDirection={{ base: "column", lg: "row" }}
+        >
           {news.map((news) => (
             <NewsCard
               title={news.title}

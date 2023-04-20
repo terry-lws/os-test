@@ -1,3 +1,4 @@
+import React from "react";
 import { VStack, Text, Box } from "@chakra-ui/react";
 import landingBg from "../images/shutterstock_1194279880_Blue-extended-lighter.jpg";
 
@@ -15,10 +16,11 @@ const LandingSection = () => {
       minHeight="100vh"
       bg={`url(${landingBg})`}
       bgSize="cover"
-      textAlign="center"
+      backgroundRepeat="no-repeat"
     >
       <VStack
-        m="0 150px"
+        my={{ base: "none", md: "300" }}
+        mx={{ base: "none", md: "150" }}
         maxWidth="1280px"
         alignItems="flex-start"
         justifyContent="top"
@@ -27,38 +29,28 @@ const LandingSection = () => {
         fontFamily="'Poppins', sans-serif"
         textAlign="left"
       >
-        <Text fontSize="18px">{firstLine}</Text>
-        <Text
-          fontSize="52px"
-          fontStyle="normal"
-          fontWeight="400"
-          width="40.813rem"
-          height="7.438rem"
-          pt="13px"
-          lineHeight="68px"
-        >
-          {secondLine}
-        </Text>
-        <Text fontSize="20px" width="543px" pt="38px">
-          {thirdLine}
-        </Text>
-        <a href="#">
-          <button
-            style={{
-              backgroundColor: "#04726D",
-              color: "#ffffff",
-              fontFamily: "Arial",
-              borderRadius: "65px",
-              width: "199px",
-              height: "64px",
-              fontSize: "18px",
-              marginTop: "1.438rem",
-              fontWeight: "400",
-            }}
-          >
-            Find out more
-          </button>
-        </a>
+        <Box w={{ base: "none", lg: "70%" }} p={10}>
+          <Text fontSize={{ base: "14", md: "18" }}>{firstLine}</Text>
+          <Text fontSize={{ base: "30", md: "52" }} fontWeight="400" pt={13}>
+            {secondLine}
+          </Text>
+          <Text fontSize={{ base: "16", md: "20" }}>{thirdLine}</Text>
+          <a href="#">
+            <button
+              className="landing-button"
+              style={{
+                fontFamily: "Arial",
+                borderRadius: "65px",
+                padding: "20px 40px",
+                fontSize: "18px",
+                marginTop: "1.438rem",
+                fontWeight: "400",
+              }}
+            >
+              Find out more
+            </button>
+          </a>
+        </Box>
       </VStack>
     </Box>
   );

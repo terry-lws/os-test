@@ -4,7 +4,7 @@ import React from "react";
 const ChallengeProcedureSection = ({ name, description, imageSrc, altText }) => {
   return (
     <>
-      <VStack>
+      <VStack pt={{base:"50", lg:"none"}}>
         <Image src={imageSrc} alt={altText} height="98.87px" />
         <Text fontSize="20px" pt="20.43px">
           {name}

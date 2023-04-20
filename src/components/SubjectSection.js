@@ -33,18 +33,23 @@ const SubjectSection = () => {
       justifyContent="center"
     >
       <VStack
+        my={100}
+        mx={50}
         maxWidth="1280px"
         justifyContent="top"
-        position="relative"
         color="#ffffff"
         fontFamily="'Poppins', sans-serif"
         alignItems="center"
       >
         <Text fontSize="37px">{heading}</Text>
-        <Text fontSize="20px" fontWeight="400" width="40.813rem" pt="11px">
+        <Text fontSize="20px" fontWeight="400" pt="11px">
           {firstLine}
         </Text>
-        <HStack spacing="14.152rem" pt="65px">
+        <HStack
+          spacing={{ base: "0", lg: "14.152rem" }}
+          pt="65px"
+          flexDirection={{ base: "column", lg: "row" }}
+        >
           {subject.map((subject) => (
             <SubjectCard
               name={subject.name}

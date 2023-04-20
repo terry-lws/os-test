@@ -4,20 +4,24 @@ import {
   Image,
   Text,
   Drawer,
+  Flex,
   DrawerOverlay,
   DrawerContent,
   DrawerBody,
   DrawerHeader,
+  DrawerCloseButton,
   Button,
   useDisclosure,
   useBreakpointValue,
+  Divider,
 } from "@chakra-ui/react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../images/logo.png";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobile = useBreakpointValue({ base: true, lg: false });
 
   return (
     <Box
@@ -34,7 +38,11 @@ const Header = () => {
       alignItems="center"
       zIndex="1"
     >
-      <Box maxWidth="1280px" pl="9.375rem">
+      <Flex
+        maxWidth="1280px"
+        margin={{ base: "0 auto", lg: "0 auto 0 150px" }}
+        display="flex"
+      >
         <HStack spacing="72px">
           <HStack spacing="12px">
             <div>
@@ -42,34 +50,54 @@ const Header = () => {
                 <Image src={logo} width="90px" height="30px" alt="logo" />
               </a>
             </div>
-            <Text
-              display="flex"
-              fontSize="14.5px"
-              fontFamily="Poppins"
-              textAlign="left"
-            >
-              Online Service
-              <br />
-              Test page
-            </Text>
+            {!isMobile && (
+              <Text
+                display="flex"
+                fontSize="14.5px"
+                fontFamily="Poppins"
+                textAlign="left"
+              >
+                Online Service
+                <br />
+                Test page
+              </Text>
+            )}
           </HStack>
           {isMobile && (
-            <Button colorScheme="blue" onClick={onOpen}>
-              Open
+            <Button bgColor="#2F2F2F" color="white" onClick={onOpen}>
+              <HamburgerIcon />
             </Button>
           )}
           <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
             <DrawerOverlay />
             <DrawerContent>
-              <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
+              <DrawerCloseButton />
+              <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
               <DrawerBody>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <a href="#">
+                  <Text>Overview</Text>
+                </a>
+                <Divider pb={2} />
+                <a href="#">
+                  <Text>The Challenge</Text>
+                </a>
+                <Divider pb={2} />
+                <a href="#">
+                  <Text>Schools</Text>
+                </a>
+                <Divider pb={2} />
+                <a href="#">
+                  <Text>Results</Text>
+                </a>
               </DrawerBody>
             </DrawerContent>
           </Drawer>
-          <HStack spacing={23} fontFamily="Arial" fontSize={17}>
+          <HStack
+            spacing={23}
+            fontFamily="Arial"
+            fontSize={17}
+            display={{ base: "none", lg: "flex" }}
+          >
             <a href="#">
               <Text>Overview</Text>
             </a>
@@ -84,7 +112,7 @@ const Header = () => {
             </a>
           </HStack>
         </HStack>
-      </Box>
+      </Flex>
     </Box>
   );
 };

@@ -28,7 +28,8 @@ const RewardSection = () => {
         transform="matrix(-1, 0, 0, 1, 0, 0)"
       />
       <VStack
-        m="0 150px"
+        my={{ base: "none", md: "60" }}
+        mx={{ base: "none", md: "150" }}
         maxWidth="1280px"
         alignItems="flex-start"
         justifyContent="top"
@@ -37,36 +38,36 @@ const RewardSection = () => {
         fontFamily="'Poppins', sans-serif"
         textAlign="left"
       >
-        <Text fontSize="25px" fontWeight="600">
-          {firstLine}
-        </Text>
-        <Text
-          fontSize="20px"
-          fontStyle="normal"
-          fontWeight="400"
-          width="28.625rem"
-          pt="15px"
-        >
-          {secondLine}
-        </Text>
-        <a href="#">
-          <button
-            style={{
-              backgroundColor: "#09257A",
-              color: "#ffffff",
-              fontFamily: "Arial",
-              borderRadius: "65px",
-              width: "263px",
-              height: "30px",
-              fontSize: "15px",
-              marginTop: "15px",
-              fontWeight: "400",
-            }}
+        <Box w={{ base: "none", lg: "70%" }} p={{ base: "5", lg: "10" }}>
+          <Text fontSize={{ base: "20px", lg: "25px" }} fontWeight="600">
+            {firstLine}
+          </Text>
+          <Text
+            fontSize={{ base: "16px", lg: "20px" }}
+            fontStyle="normal"
+            fontWeight="400"
+            pt="15px"
           >
-            Certificate and award criteria{" "}
-            <TriangleUpIcon transform="rotate(90deg)" />
-          </button>
-        </a>
+            {secondLine}
+          </Text>
+          <a href="#">
+            <button
+              className="reward-button"
+              style={{
+                fontFamily: "Arial",
+                borderRadius: "65px",
+                width: "263px",
+                height: "30px",
+                fontSize: "15px",
+                marginTop: "15px",
+                fontWeight: "400",
+              }}
+            >
+              Certificate and award criteria{" "}
+              <TriangleUpIcon transform="rotate(90deg)" />
+            </button>
+          </a>
+        </Box>
       </VStack>
     </Box>
   );
