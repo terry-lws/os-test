@@ -1,4 +1,13 @@
-import { VStack, Text, Box, HStack, Input, Select } from "@chakra-ui/react";
+import {
+  VStack,
+  Text,
+  Box,
+  HStack,
+  Input,
+  Select,
+  Textarea,
+} from "@chakra-ui/react";
+import { useState } from "react";
 import { TriangleUpIcon } from "@chakra-ui/icons";
 
 const heading = "Contact us to find out more";
@@ -6,6 +15,12 @@ const subheading =
   "One of our friendly staff members will contact you within 24 hours";
 
 const ContactSection = () => {
+  const [showTextArea, setShowTextArea] = useState(false);
+
+  function handleClick() {
+    setShowTextArea((textAreaState) => !textAreaState);
+  }
+
   return (
     <Box
       display="flex"
@@ -28,10 +43,20 @@ const ContactSection = () => {
         <Text fontSize="14px" pt="13px">
           {subheading}
         </Text>
-        <HStack pt="43px" spacing="30px" display="flex" alignItems="flex-start">
-          <VStack spacing="20px" w="50%" alignItems="flex-start">
+        <HStack
+          pt="43px"
+          spacing={{ base: "none", lg: "30px" }}
+          display="flex"
+          flexDirection={{ base: "column", lg: "row" }}
+          alignItems="flex-start"
+        >
+          <VStack
+            spacing="20px"
+            w={{ base: "none", lg: "50%" }}
+            alignItems="flex-start"
+          >
             <Input
-              w="360px"
+              w={{ base: "180px", lg: "360px" }}
               h="40px"
               fontSize="20px"
               placeholder="My name"
@@ -39,7 +64,7 @@ const ContactSection = () => {
               borderColor="#2F2F2F"
             />
             <Input
-              w="360px"
+              w={{ base: "180px", lg: "360px" }}
               h="40px"
               fontSize="20px"
               placeholder="Email address"
@@ -47,9 +72,14 @@ const ContactSection = () => {
               borderColor="#2F2F2F"
             />
           </VStack>
-          <VStack spacing="20px" w="50%" alignItems="flex-start">
+          <VStack
+            pt={{ base: "20px", lg: "0" }}
+            spacing="20px"
+            w={{ base: "none", lg: "50%" }}
+            alignItems="flex-start"
+          >
             <Input
-              w="360px"
+              w={{ base: "180px", lg: "360px" }}
               h="40px"
               fontSize="20px"
               placeholder="School name"
@@ -57,7 +87,7 @@ const ContactSection = () => {
               borderColor="#2F2F2F"
             />
             <Select
-              w="360px"
+              w={{ base: "180px", lg: "360px" }}
               h="40px"
               fontSize="20px"
               placeholder="Country"
@@ -73,20 +103,28 @@ const ContactSection = () => {
               fontFamily="'Roboto', sans-serif"
               fontSize="16px"
               textDecoration="underline"
+              cursor="pointer"
+              onClick={handleClick}
             >
-              Add message (optional)
+              {showTextArea ? "Hide message box" : "Add message (optional)"}
             </Text>
+            {showTextArea && (
+              <Textarea
+                placeholder="Enter your message here"
+                _placeholder={{ color: "#707070" }}
+                borderColor="#2F2F2F"
+              />
+            )}
             <button
-                style={{
-                  backgroundColor: "#236477",
-                  color: "#ffffff",
-                  borderRadius: "65px",
-                  fontSize: "15px",
-                  padding: "4px 13px"
-                }}
-              >
-                Send <TriangleUpIcon transform="rotate(90deg)" />
-              </button>
+              className="submit-button"
+              style={{
+                borderRadius: "65px",
+                fontSize: "15px",
+                padding: "4px 13px",
+              }}
+            >
+              Send <TriangleUpIcon transform="rotate(90deg)" />
+            </button>
           </VStack>
         </HStack>
       </VStack>
