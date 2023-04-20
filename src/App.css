@@ -33,6 +33,38 @@
   color: #61dafb;
 }
 
+.landing-button {
+  background-color: #04726D;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.landing-button:hover {
+  background-color: #dddddd;
+  color: #04726D;
+}
+
+.reward-button {
+  background-color: #09257A;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.reward-button:hover {
+  background-color: #dddddd;
+  color: #09257A;
+}
+.submit-button {
+  background-color: #236477;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #dddddd;
+  color: #236477;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
